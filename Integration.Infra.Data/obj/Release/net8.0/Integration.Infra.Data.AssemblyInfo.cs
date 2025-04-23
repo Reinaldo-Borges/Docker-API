@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Integration.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16a31843b268bafbde1c59e423f92e2ea430eaee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e9d0282d0516783c459f3cf407afe50ef72eaaf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Integration.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Integration.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

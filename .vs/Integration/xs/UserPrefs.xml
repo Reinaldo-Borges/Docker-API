@@ -1,4 +1,32 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{11E8D14E-5D55-4F6C-A7D4-A8C986688056}|https">
+﻿<Properties StartupConfiguration="{11E8D14E-5D55-4F6C-A7D4-A8C986688056}|https" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="docker-compose.yml">
+    <Files>
+      <File FileName="docker-compose.yml" Line="44" Column="9" />
+      <File FileName="Integration.API/Dockerfile" Line="1" Column="1" />
+      <File FileName="Integration.API/appsettings.json" Line="1" Column="1" />
+      <File FileName="Integration.API/Integration.API.csproj" Line="31" Column="104" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Integration" expanded="True">
+            <Node name="docker-compose" expanded="True">
+              <Node name="docker-compose.yml" selected="True" />
+            </Node>
+            <Node name="Integration.API">
+              <Node name="initdb" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Integration.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

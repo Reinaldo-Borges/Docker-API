@@ -4,6 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>817ec6ab-871c-42c9-a930-d57e4690741e</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
@@ -39,17 +41,9 @@
     <None Remove="Model\ViewModel\" />
     <None Remove="Model\Request\" />
     <None Remove="Setup\" />
+    <None Remove="initdb\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Model\" />
-    <Folder Include="Services\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Model\ViewModel\" />
-    <Folder Include="Model\Request\" />
-    <Folder Include="Setup\" />
-  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Integration.Infra.Data\Integration.Infra.Data.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>

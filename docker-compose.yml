@@ -1,0 +1,46 @@
+version: '3.4'
+
+services:
+  integration.api:
+    container_name: APIContainer
+    image: ${DOCKER_REGISTRY-}integration
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - 9000:8080
+      - 9001:8081
+    build:
+      context: .
+      dockerfile: Integration.API/Dockerfile
+    depends_on:
+      - database
+
+  database:
+    container_name: SQLContainer
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    platform: linux/amd64
+    ports:
+      - 1435:1433
+    environment:
+      PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Int3Gr@t137 
+    volumes:
+      - type: volume
+        source: mssql
+        target: /var/opt/mssql
+
+  mssqltools:
+    image: mcr.microsoft.com/mssql-tools
+    platform: linux/amd64
+    depends_on:
+      - database
+    volumes:
+      - ./Integration.API/initdb/init-script.sql:/tmp/init-script.sql 
+      - ./Integration.API/initdb/docker-entrypoint.sh:/tmp/docker-entrypoint.sh   
+    command: /bin/bash ./tmp/docker-entrypoint.sh
+
+volumes:
+  mssql:
+    external:
+      name: mssql

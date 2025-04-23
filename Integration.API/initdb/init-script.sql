@@ -1,9 +1,15 @@
-﻿CREATE DATABASE IntegrationDb;
-GO
-USE IntegrationDb;
+﻿IF NOT EXISTS (
+        SELECT *
+        FROM sys.databases
+        WHERE name = 'IntegrationDb'
+        )
+BEGIN
+    CREATE DATABASE [IntegrationDb]
 
+	GO
+	USE IntegrationDb;
 
-SET ANSI_NULLS ON
+    SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 
 CREATE TABLE [dbo].[AspNetRoles](
@@ -276,5 +282,26 @@ ALTER TABLE [dbo].[Student]  WITH CHECK ADD  CONSTRAINT [FK_Student_TypeStudent]
 REFERENCES [dbo].[TypeStudent] ([Id])
 
 ALTER TABLE [dbo].[Student] CHECK CONSTRAINT [FK_Student_TypeStudent]
+
+INSERT INTO dbo.AspNetRoles(Id, Name, NormalizedName)
+VALUES(1 , 'Basic', 'BASIC');
+INSERT INTO dbo.AspNetRoles(Id, Name, NormalizedName) 
+VALUES(2 , 'Partner', 'PARTNER');
+INSERT INTO dbo.AspNetRoles(Id, Name, NormalizedName)
+VALUES(3 , 'Premium', 'PREMIUM');
+
+INSERT INTO TypeStudent(Id, Name)
+VALUES(1 , 'Basic');
+INSERT INTO TypeStudent(Id, Name) 
+VALUES(2 , 'Partner');
+INSERT INTO TypeStudent(Id, Name)
+VALUES(3 , 'Premium');
+END
+
+
+GO
+USE IntegrationDb;
+
+
 
 
